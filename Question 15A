@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+double fac(int);
+double my_fun(double, int );
+int main(void) {
+    printf("my_fun(2.2, 3) = %.5f\n", my_fun(2.2, 3));
+    printf("my_fun(2.2, 5) = %.5f\n", my_fun(2.2, 5));
+    return 0;
+}
+double my_fun(double x, int n) {
+    double sum = 0.0;
+    int k;
+    for (k = 1; k <= n; k++) {
+        sum += (pow(-1, k) * pow(x, 2 * k + 1)) / fac(2 * k + 1);
+    }
+    return sum;
+}
+double fac(int n) {
+	if (n > 0)
+	    return (n*fac(n-1));
+	else
+		return 1;
+}
