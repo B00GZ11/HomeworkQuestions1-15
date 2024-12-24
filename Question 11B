@@ -1,0 +1,10 @@
+#include <stdio.h>
+int find(int n);
+int main(void) {
+    printf("The 5th integer satisfying the Sunzi problem is: %d\n", find(5));
+    printf("The 7th integer satisfying the Sunzi problem is: %d\n", find(7));
+    return 0;
+}
+int find(int n) {
+    return 23 + 105 * (n - 1);
+}
