@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h>
+double my_fun(int);
+int main(void) {
+    int n = 1;
+    while (my_fun(n) <= 0.99999) {
+        n++;
+    }
+    printf("The smallest n for my_fun(n) > 0.99999 is: %d\n", n);
+    return 0;
+}
+double my_fun(int n) {
+    double sum = 0.0;
+    int k;
+    for (k = 1; k <= n; k++) {
+        sum += 1.0 / pow(2, k);
+    }
+    return sum;
+}
