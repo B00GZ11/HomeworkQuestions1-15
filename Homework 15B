@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+double fac(int);
+double my_fun(double, int);
+int main(void) {
+    int n = 1;
+    double diff;
+    do {
+        diff = fabs(my_fun(2.2, n) - my_fun(2.2, n - 1));
+        n++;
+    } while (diff >= 0.00001);
+    printf("The smallest n such that my_fun(2.2, n-1) and my_fun(2.2, n) differ by less than 0.00001 is: %d\n", n - 1);
+    return 0;
+}
+double my_fun(double x, int n) {
+    if (n == 0) {
+        return 0.0;
+    }
+    double sum = 0.0;
+    int k;
+    for (k = 1; k <= n; k++) {
+        sum += (pow(-1, k) * pow(x, 2 * k + 1)) / fac(2 * k + 1);
+    }
+    return sum;
+}
+double fac(int n) {
+	if (n > 0)
+	    return (n*fac(n-1));
+	else
+		return 1;
+}
