@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+double my_fun(int);
+int main(void) {
+    int n = 1;
+    double result = my_fun(n);
+    while (1.0 - result > 0.000001) {
+        n++;
+        result = my_fun(n);
+    }
+    printf("Fixed value reached: %6.5f (when n = %d)\n", result, n);
+    return 0;
+}
+double my_fun(int n) {
+    double sum = 0.0;
+    int k;
+    for (k = 1; k <= n; k++) {
+        sum += 1.0 / pow(2, k);
+    }
+    return sum;
+}
