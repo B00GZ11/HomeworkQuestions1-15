@@ -4,11 +4,11 @@ double fac(int);
 double my_fun(double, int);
 int main(void) {
     int n = 1;
-    double diff;
-    do {
-        diff = fabs(my_fun(2.2, n) - my_fun(2.2, n - 1));
+    double diff = fabs(my_fun(2.2, n) - my_fun(2.2, n - 1));
+    while (diff >= 0.00001) {
         n++;
-    } while (diff >= 0.00001);
+        diff = fabs(my_fun(2.2, n) - my_fun(2.2, n - 1));
+    }
     printf("The smallest n such that my_fun(2.2, n-1) and my_fun(2.2, n) differ by less than 0.00001 is: %d\n", n - 1);
     return 0;
 }
@@ -24,8 +24,8 @@ double my_fun(double x, int n) {
     return sum;
 }
 double fac(int n) {
-	if (n > 0)
-	    return (n*fac(n-1));
-	else
-		return 1;
+    if (n > 0)
+        return (n * fac(n - 1));
+    else
+        return 1;
 }
