@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+double my_fun(int);
+int main(void) {
+    printf("my_fun(3) = %.5f\n", my_fun(3));
+    printf("my_fun(4) = %.5f\n", my_fun(4));
+    printf("my_fun(5) = %.5f\n", my_fun(5));
+    printf("my_fun(6) = %.5f\n", my_fun(6));
+    return 0;
+}
+double my_fun(int n) {
+    double sum = 0.0;
+    int k;
+    for (k = 1; k <= n; k++) {
+        sum += 1.0 / pow(2, k);
+    }
+    return sum;
+}
