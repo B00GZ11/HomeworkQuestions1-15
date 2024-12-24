@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+void kitty(int);
+int main(void)
+{
+ 	int k = 5;
+	kitty( k );
+	system("pause");
+	return 0;
+}
+void kitty(int k)
+{
+	int i;
+	for ( i = 0; i < k; i++ )
+		printf("Hello Kitty.\n");
+}
