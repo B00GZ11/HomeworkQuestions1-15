@@ -1,0 +1,14 @@
+#include <stdio.h>
+int find(int);
+int main(void) {
+    printf("The first 12 integers that satisfy the Sunzi problem are:\n");
+    int i;
+    for (i = 1; i <= 12; i++) {
+        printf("%d ", find(i));
+    }
+    printf("\n");
+    return 0;
+}
+int find(int n) {
+    return 23 + 105 * (n - 1);
+}
